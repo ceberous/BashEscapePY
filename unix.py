@@ -7,7 +7,7 @@
 #need_escaped_ords = [32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44, 59, 60, 62, 63, 91, 92, 93, 94, 96, 123, 124, 125]
 
 
-def UnixEscape( wString ):
+def escape( wString ):
 	wString = wString.replace( chr( 92 ) , ( chr( 92 ) + chr( 92 ) ) ) # Back Slash ( has to be first )
 	wString = wString.replace( chr( 32 ) , ( chr( 92 ) + chr( 32 ) ) ) # space
 	wString = wString.replace( "!" , ( chr( 92 ) + "!" ) )
@@ -35,4 +35,4 @@ def UnixEscape( wString ):
 
 if __name__ == "__main__":
 	import sys
-	print( UnixEscape( sys.argv[ 1 ] ) )
+	print( escape( sys.argv[ 1 ] ) )
